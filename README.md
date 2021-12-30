@@ -1,4 +1,6 @@
 # my-texmf
 
-## Collecting together the packages needed for my course notes and problem sets
+## Installation
+
+Put this into the search path 
 
