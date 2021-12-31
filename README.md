@@ -1,4 +1,4 @@
-# my-texmf
+# My local texmf files
 
 ## Installation
 
