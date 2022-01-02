@@ -1,0 +1,115 @@
+%% Example of notes in klstyle
+\documentclass[USLetter,11pt]{report}
+\usepackage{klstyle}
+\usepackage{lipsum}
+
+\notesheader
+
+\setcounter{chapter}{3}
+
+\begin{document}
+
+\chapter{Yada yada}
+
+\section{Blah blah}
+
+\lipsum[1]
+\subsection{A thing}
+\lipsum[2]
+
+\begin{defn}[Silliness]
+A string is called silly if and only if it is silly.
+\end{defn}
+
+\lipsum[10]
+
+\subsection{Another thing}
+\lipsum[9]
+
+\begin{thm}[Russell \& Whitehead]
+ 1+1=2.
+\end{thm}
+
+\lipsum[8]
+
+\begin{thm}[Banach] Let $f$ be a contraction that maps a compact set $G$ into itself. Then
+    \begin{itemize}
+        \item $\exists$ a unique fixed point $x^*\in G$
+        \item Iteration of $x_{n+1}=f(x_n)$ started from $x_0\in G$ will converge to $x^*$
+    \end{itemize}
+\end{thm}
+
+\paragraph{A small detail}
+
+\lipsum[3]
+
+\begin{defn}[Silliness]
+A string is called silly if and only if it is silly.
+\end{defn}
+
+\section{Argle bargle}
+Something important:
+\begin{boxedimportant}
+    No matter where you go, there you are.
+\end{boxedimportant}
+
+\lipsum[1]
+\begin{boxedexample}
+    \lipsum[2]
+\end{boxedexample}
+
+This is an important theorem, and needs a footnote~\footnote{\lipsum[1]}
+\begin{thm}[Russell \& Whitehead]
+ 1+1=2.
+\end{thm}
+
+\lipsum[8]
+
+\begin{thm}[Banach] Let $f$ be a contraction that maps a compact set $G$ into itself. Then
+    \begin{itemize}
+        \item $\exists$ a unique fixed point $x^*\in G$
+        \item Iteration of $x_{n+1}=f(x_n)$ started from $x_0\in G$ will converge to $x^*$
+    \end{itemize}
+\end{thm}
+
+
+
+\begin{thm}[Russell \& Whitehead]
+ 1+1=2.
+\end{thm}
+
+\lipsum[8]
+
+\begin{thm}[Banach] Let $f$ be a contraction that maps a compact set $G$ into itself. Then
+    \begin{itemize}
+        \item $\exists$ a unique fixed point $x^*\in G$
+        \item Iteration of $x_{n+1}=f(x_n)$ started from $x_0\in G$ will converge to $x^*$
+    \end{itemize}
+\end{thm}
+
+\lipsum[10-12]
+
+\begin{thm}[Russell \& Whitehead]
+ 1+1=2.
+\end{thm}
+
+\lipsum[8]
+
+\begin{thm}[Banach] Let $f$ be a contraction that maps a compact set $G$ into itself. Then
+    \begin{itemize}
+        \item $\exists$ a unique fixed point $x^*\in G$
+        \item Iteration of $x_{n+1}=f(x_n)$ started from $x_0\in G$ will converge to $x^*$
+    \end{itemize}
+\end{thm}
+
+\lipsum[4]
+\begin{hwprob}
+    Prove there are infinitely many twin primes.
+\end{hwprob}
+
+
+\begin{hwsoln}
+    \lipsum[1-4]
+\end{hwsoln}
+
+\end{document}

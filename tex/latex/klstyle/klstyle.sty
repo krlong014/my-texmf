@@ -1,0 +1,107 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{klstyle}[1 Jan 2021]
+
+% Some packages we'll use
+\RequirePackage{fancyhdr}
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{xcolor}
+\RequirePackage{titlesec}
+\RequirePackage{lastpage}
+\usepackage[text={6.5in,9.5in},centering]{geometry}
+
+\setlength{\headheight}{14.0pt}
+
+% A few colors
+\definecolor{royalblue}{rgb}{0.2549,0.4118,0.88235}
+\definecolor{steelblue}{rgb}{0.2745,0.5098,0.7059}
+\definecolor{darksteelblue}{rgb}{0.2196,0.4078,0.5647}
+\definecolor{powderblue}{rgb}{0.6902,0.8784,0.902}
+
+% Colors for theorems, definitions, and section headers
+\newcommand\thmcolor{\color{teal}}          % Theorem color
+\newcommand\defcolor{\color{darksteelblue}} % Definition color
+\newcommand\hdrcolor{\color{royalblue}}     % Section header color
+\newcommand\remcolor{\color{steelblue}}     % Remark color
+
+% Section/paragraph formatting and numbering
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+
+% Theorem-like environments
+
+\newtheoremstyle{mydefn}{}{}{\defcolor}{}{\bfseries\defcolor}{}{ }{}
+\newtheoremstyle{mythm}{}{}{\thmcolor}{}{\bfseries\thmcolor}{}{ }{}
+\newtheoremstyle{myrem}{}{}{\remcolor}{}{\bfseries\remcolor}{}{ }{}
+\newtheoremstyle{myprob}{}{}{}{}{\bfseries\thmcolor}{}{ }{}
+\theoremstyle{mydefn}
+\newtheorem{defn}{Definition}
+\theoremstyle{mydefn}
+\newtheorem{rem}{Remark}
+
+\theoremstyle{mythm}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+
+
+% Set styles for section headers
+\titleformat{\chapter}{\normalfont\Huge\bfseries\color{royalblue}}{\thechapter}{12pt}{}
+\titleformat{\section}{\normalfont\Large\bfseries\color{royalblue}}{\thesection}{12pt}{}
+\titleformat{\subsection}{\normalfont\Large\bfseries\color{royalblue}}{\thesubsection}{12pt}{}
+\titleformat{\subsubsection}{\normalfont\Large\bfseries\color{royalblue}}{\thesubsubsection}{12pt}{}
+\titleformat{\paragraph}{\normalfont\bfseries\color{royalblue}}{\theparagraph}{12pt}{}
+
+% Highlight something as important
+\usepackage[many]{tcolorbox}
+\theoremstyle{plain}
+\newtcolorbox{tcbimportant}{breakable,enhanced,colframe=red,colback=red!5!white}
+\newenvironment{boxedimportant}{\begin{tcbimportant}}{\end{tcbimportant}}
+
+% Boxed example
+\newtcbtheorem{tcbexample}{Example}%
+{breakable,enhanced,fonttitle=\bfseries,colframe=teal,colback=powderblue}{ex}
+\newenvironment{boxedexample}{\begin{tcbexample}{}{}}{\end{tcbexample}}
+
+% HW problem
+\theoremstyle{myprob}
+\newtheorem{problem}{Problem}
+\newenvironment{hwprob}{\begin{problem}}{\end{problem}}
+
+% Solution to a problem
+\usepackage{xcolor}
+\usepackage[many]{tcolorbox}
+\theoremstyle{definition}
+\theoremstyle{plain}
+\newtcbtheorem{tcbhwsoln}{Solution to problem}{breakable,enhanced,fonttitle=\bfseries,colframe=gray}{soln}
+\newenvironment{hwsoln}{\begin{tcbhwsoln}{}{}}{\end{tcbhwsoln}}
+
+% Page header/footer for homework assignments.
+% Arguments are:
+% #1: Class name
+% #2: Assignment number
+% #3: Due date
+\newcommand\hwheader[3]{%
+\newcommand\centermark{}
+\pagestyle{fancy}
+\fancyhead[L]{\color{royalblue}\bfseries \leftmark}
+\fancyhead[C]{\color{royalblue}\bfseries \centermark}
+\fancyhead[R]{\color{royalblue}\bfseries \rightmark}
+\fancyfoot{}
+\fancyfoot[C]{\color{royalblue}\bfseries Page~\thepage~of~\pageref{LastPage}}
+\renewcommand{\footrulewidth}{1.0pt}
+\renewcommand{\headrulewidth}{1.0pt}
+\renewcommand{\leftmark}{#1}
+\renewcommand{\centermark}{#2}
+\renewcommand{\rightmark}{Due: #3}
+}
+
+% Page header/footer for notes.
+\newcommand\notesheader{%
+\pagestyle{fancy}
+\fancyhead[LO,RE]{}
+\fancyhead[LE,RO]{\color{royalblue}\leftmark}
+\renewcommand{\footrulewidth}{1.0pt}
+\renewcommand{\headrulewidth}{1.0pt}
+}

@@ -1,0 +1,47 @@
+%% Example of a homework assignment with klstyle
+\documentclass[USLetter,11pt]{report}
+\usepackage{klstyle}
+\usepackage{lipsum}
+
+% Set \answerstrue if you want to see answers; \answersfalse to hide them.
+\newif\ifanswers
+%\answersfalse
+\answerstrue
+
+% Specify the header
+\hwheader{MATH 5335}{HW \#1}{31 Feb 2022}
+
+%% -------- End of preamble, beginning of document -------------------------
+\begin{document}
+
+\begin{hwprob}
+    Prove that 1+1=2.
+\end{hwprob}
+
+\ifanswers
+\begin{hwsoln}
+    See Russell \& Whitehead, {\it Principia Mathematica}.
+\end{hwsoln}
+\fi
+
+\begin{hwprob}
+    Prove Euler's identity $e^{ix}=\cos x+ i \sin x.$
+\end{hwprob}
+
+\ifanswers
+\begin{hwsoln}
+    \lipsum[1-3]
+\end{hwsoln}
+\fi
+
+\begin{hwprob}
+    Prove $$\cos x = \frac{e^{ix}+e^{-ix}}{2}$$
+\end{hwprob}
+
+\ifanswers
+\begin{hwsoln}
+    \lipsum[4-5]
+\end{hwsoln}
+\fi
+
+\end{document}
