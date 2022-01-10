@@ -1,0 +1,150 @@
+% Partial derivatives
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\pddd}[2]{\frac{\partial^3 #1}{\partial #2^3}}
+\newcommand{\pmix}[3]{\frac{\partial^2 #1}{\partial #2 \partial #3}}
+\newcommand{\pmixx}[4]{\frac{\partial^3 #1}{\partial #2 \partial #3 \partial #4}
+}
+
+% Differential operators
+\newcommand{\polarLapl}[3]{\frac{1}{#2}\pd{}{#2}\left(#2\pd{#1}{#2}\right)%
++\frac{1}{#2^2}\pdd{#1}{#3}}
+
+% Null space
+\DeclareMathOperator{\Null}{null}
+\DeclareMathOperator{\Range}{range}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Col}{col}
+
+% Unit vectors
+\newcommand{\ehat}{\boldsymbol{\hat e}}
+\newcommand{\ihat}{\boldsymbol{\hat i}}
+\newcommand{\jhat}{\boldsymbol{\hat j}}
+\newcommand{\khat}{\boldsymbol{\hat k}}
+\newcommand{\xhat}{\boldsymbol{\hat x}}
+\newcommand{\yhat}{\boldsymbol{\hat y}}
+\newcommand{\zhat}{\boldsymbol{\hat z}}
+\newcommand{\rhat}{\boldsymbol{\hat r}}
+\newcommand{\Rhat}{\boldsymbol{\hat R}}
+\newcommand{\rhohat}{\boldsymbol{\hat\rho}}
+\newcommand{\thetahat}{\boldsymbol{\hat\theta}}
+\newcommand{\phihat}{\boldsymbol{\hat\phi}}
+\newcommand{\erho}{\boldsymbol{\hat e}_\rho}
+\newcommand{\ephi}{\boldsymbol{\hat e}_\phi}
+\newcommand{\etheta}{\boldsymbol{\hat e}_\theta}
+\newcommand{\erhodot}{\boldsymbol{\dot{\hat e}}_\rho}
+\newcommand{\ephidot}{\boldsymbol{\dot{\hat e}}_\phi}
+\newcommand{\ellhat}{\boldsymbol{\hat \ell}}
+\newcommand{\nhat}{\boldsymbol{\hat n}}
+\newcommand{\phat}{\boldsymbol{\hat p}}
+\newcommand{\qhat}{\boldsymbol{\hat q}}
+\newcommand{\tauhat}{\boldsymbol{\hat\tau}}
+
+
+% Double arrow for transform pairs
+\newcommand{\tp}{\longleftrightarrow}
+
+% Scripted Fourier and Laplace transform notation
+\newcommand{\FT}[1]{\mathcal{F}\left\{{#1}\right\}}
+\newcommand{\LT}[1]{\mathcal{L}\left\{{#1}\right\}}
+
+% Mathcal
+\newcommand{\MCL}{\mathcal{L}}
+
+
+% Ordinary derivatives
+\newcommand{\od}[2]{\frac{d #1}{d #2}}
+\newcommand{\odd}[2]{\frac{d^2 #1}{d #2^2}}
+
+% Dot notation for time derivatives
+\newcommand{\overdot}[1]{\overset{{\mbox{\large\bfseries .}}}{#1}}
+\newcommand{\overddot}[1]{\overset{{\mbox{\large\bfseries ..}}}{#1}}
+
+% Common vector space symbols
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\FF}{\mathbb{F}}
+%\newcommand{\null}{\mathrm{null}}
+
+% Integral over all of R
+\newcommand{\intR}{{\int_\infty^\infty}}
+
+% Underbrace an expression
+\newcommand{\ub}[2]{\underbrace{{#1}}_{#2}}
+
+% Put a big arrow under an expression
+\newcommand{\ua}[1]{\underset{\Longrightarrow}{#1}}
+
+% Put an expression over a long arrow
+\newcommand{\oa}[1]{\overset{#1}\longrightarrow}
+
+% Evaluate at limits of integration
+\newcommand{\evalat}[1]{\left.#1\right|}
+
+%
+\usepackage{cancel}
+
+% Including multi-page PDF files
+\usepackage{pdfpages}
+\newcommand\bigpdf[2]{%
+    \includepdf[frame=true,pages=1,scale=0.8,pagecommand={#1}]{#2}%
+    \includepdf[frame=true,pages=2-,scale=0.85,pagecommand={}]{#2}%
+    }
+
+\newcommand\smallpdf[2]{%
+    \includepdf[frame=true,pages=1,scale=0.8,pagecommand={#1}]{#2}}
+
+
+
+% Circuit drawing
+\usepackage{tikz}
+\usetikzlibrary{snakes}
+\usepackage{circuitikz}
+% EMF symbol
+\newcommand{\emf}{\mathcal{E}}
+
+
+
+% Code listings
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{medgray}{RGB}{220,220,220}
+\definecolor{lightgray}{RGB}{240,240,240}
+\definecolor{bluegray}{RGB}{180,180,200}
+\lstset{%
+basicstyle={\sffamily\footnotesize},%
+language={Mathematica},%
+tabsize=2,%
+showstringspaces=false,%
+frame=shadowbox,%
+breaklines=false,%
+mathescape=true,%
+commentstyle={\rmshape\textcolor{blue}},%
+lineskip=1pt,%
+aboveskip=\bigskipamount,%
+belowskip=\bigskipamount,%
+rulesepcolor=\color{bluegray}}
+
+% Highlight an equation
+\newcommand{\highlight}[1]{\colorbox{lightgray}{\ensuremath{#1}}}
+
+% Highlighted examples
+\usepackage{mdframed}
+
+\ifdefined\example
+\let\basicexample\example
+\renewenvironment{example}{\begin{mdframed}[backgroundcolor=lightgray,linewidth=2pt]\begin{basicexample}}{\end{basicexample}\end{mdframed}}
+\fi
+
+%\ifdefined\chapter
+%\ifdefined\example
+%\numberwithin{example}{chapter}
+%\fi
+%\fi
+
+\newcommand\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}

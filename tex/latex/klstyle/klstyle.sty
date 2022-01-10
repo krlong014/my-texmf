@@ -17,6 +17,7 @@
 \definecolor{steelblue}{rgb}{0.2745,0.5098,0.7059}
 \definecolor{darksteelblue}{rgb}{0.2196,0.4078,0.5647}
 \definecolor{powderblue}{rgb}{0.6902,0.8784,0.902}
+\definecolor{darkgreen}{rgb}{0.0,0.4,0.0}
 
 % Colors for theorems, definitions, and section headers
 \newcommand\thmcolor{\color{teal}}          % Theorem color
@@ -55,16 +56,37 @@
 
 % Set styles for section headers
 \titleformat{\chapter}{\normalfont\Huge\bfseries\color{royalblue}}{\thechapter}{12pt}{}
-\titleformat{\section}{\normalfont\Large\bfseries\color{royalblue}}{\thesection}{12pt}{}
+\titleformat{\section}{\normalfont\LARGE\bfseries\color{royalblue}}{\thesection}{12pt}{}
 \titleformat{\subsection}{\normalfont\Large\bfseries\color{royalblue}}{\thesubsection}{12pt}{}
-\titleformat{\subsubsection}{\normalfont\Large\bfseries\color{royalblue}}{\thesubsubsection}{12pt}{}
+\titleformat{\subsubsection}{\normalfont\large\bfseries\color{royalblue}}{\thesubsubsection}{12pt}{}
 \titleformat{\paragraph}{\normalfont\bfseries\color{royalblue}}{\theparagraph}{12pt}{}
+
+% Title style
+% \makeatletter
+% \renewcommand\maketitle
+%    {\center
+%     {\LARGE\bfseries\color{royalblue}\@title}%
+%    \medskip\par\noindent
+%    {\Large\@author}%
+%    \medskip\par\noindent
+%    {\large\@date}%
+%    \bigskip\par\noindent
+%   }
+% \makeatother
 
 % Highlight something as important
 \usepackage[many]{tcolorbox}
 \theoremstyle{plain}
-\newtcolorbox{tcbimportant}{breakable,enhanced,colframe=red,colback=red!5!white}
+\newtcolorbox{tcbimportant}{breakable,enhanced,colframe=teal,colback=green!5!white}
 \newenvironment{boxedimportant}{\begin{tcbimportant}}{\end{tcbimportant}}
+
+
+
+% Highlight something as bad
+\usepackage[many]{tcolorbox}
+\theoremstyle{plain}
+\newtcolorbox{tcbbad}{breakable,enhanced,colframe=red,colback=red!5!white}
+\newenvironment{boxedbad}{\begin{tcbbad}}{\end{tcbbad}}
 
 % Boxed example
 \newtcbtheorem{tcbexample}{Example}%
