@@ -18,6 +18,8 @@
 \definecolor{darksteelblue}{rgb}{0.2196,0.4078,0.5647}
 \definecolor{powderblue}{rgb}{0.6902,0.8784,0.902}
 \definecolor{darkgreen}{rgb}{0.0,0.4,0.0}
+\definecolor{lightgray}{rgb}{0.98,0.98,0.98}
+
 
 % Colors for theorems, definitions, and section headers
 \newcommand\thmcolor{\color{teal}}          % Theorem color
@@ -102,8 +104,8 @@
 \usepackage{xcolor}
 \usepackage[many]{tcolorbox}
 \theoremstyle{definition}
-\newtcbtheorem{tcbhwsoln}{Solution to problem}{breakable,enhanced,fonttitle=\bfseries,colframe=gray}{soln}
-\newenvironment{hwsoln}{\begin{tcbhwsoln}{}{}}{\end{tcbhwsoln}}
+\newtcbtheorem{tcbhwsoln}{Solution to problem}{breakable,enhanced,fonttitle=\bfseries,colframe=teal,colback=lightgray}{soln}
+\newenvironment{boxedhwsoln}{\begin{tcbhwsoln}{}{}}{\end{tcbhwsoln}}
 
 % Page header/footer for homework assignments.
 % Arguments are:
