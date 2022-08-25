@@ -135,3 +135,18 @@
 \renewcommand{\footrulewidth}{1.0pt}
 \renewcommand{\headrulewidth}{1.0pt}
 }
+
+% Page header/footer for syllabus.
+% Arguments are:
+% #1: Class name
+% #2: Semester
+\newcommand\sylheader[2]{%
+\pagestyle{fancy}%
+\fancyhead[L]{\color{royalblue}\bfseries \leftmark}%
+\fancyhead[R]{\color{royalblue}\bfseries \rightmark}%
+\fancyfoot[C]{\color{royalblue}\bfseries Page~\thepage~of~\pageref{LastPage}}%
+\renewcommand{\footrulewidth}{1.0pt}%
+\renewcommand{\headrulewidth}{1.0pt}%
+\renewcommand{\leftmark}{#1}%
+\renewcommand{\rightmark}{#2}%
+}
